@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page de {{team.firstname}} {{team.lastname}}{% endblock %}
+
+{% block body %}
+<a class="btn retour" href="/">Retour</a>
+<a class="modifier" href="/form?teamId={{team.id}}">Modifier</a>
+<div class="example-wrapper">
+
+    <img src="{{asset(team.picture)}}">
+    <p><strong>Nom:</strong> {{team.lastname}}</p>
+    <p><strong>Prénom:</strong> {{team.firstname}}</p>
+    <p><strong>Position:</strong> {{team.positions[0].getLabel()}}
+    
+        {# Boucle du tableau team.position #}
+        {% for position in team.positions %}
+            {# Si l'index de la loop en partant de 0 est supérieur ou égal a 1 #}
+            {% if loop.index0 >= 1 %}
+                /{{team.positions[loop.index0].getLabel()}}
+            {% endif %}
+        {% endfor %}
+    </p>
+
+    <p><strong>Age:</strong> {{team.yearOld}}</p>
+    <p><strong>Adresse:</strong> {{team.adresse}}</p>
+    <p><strong>Mobile:</strong> {{team.tel}}</p>
+    <p><strong>Mail:</strong> <a href="#">{{team.mail}}</a></p>
+    <p><strong>CV:</strong> <a href="{{asset(team.CV)}}">cv_{{team.lastname}}.pdf</a></p>
+
+</div>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Acceuil{% endblock %}
+
+{% block body %}
+
+<div class="example-wrapper">
+
+    {# Boucle du tableaux t_array envoyer du controller #}
+    {% for key, team in t_array %}
+
+        {# équivalent php "explode()" #}
+        {% set hierarchie = team.hierarchie|split('/') %}
+
+        {# Si le tableau hierarchie possède une ligne a l'index 0 #}
+        {% if hierarchie[0] is defined %}
+            {# same as() (équivalent php "===") #}
+            {% if hierarchie[0] is same as('2') %}
+                {# Alors création de variable className #}
+                {% set className = 'deuxieme' %}
+
+            {# Idem #}
+            {% elseif hierarchie[0] is same as('3') %}
+                {% set className = 'troisieme' %}
+            {% elseif hierarchie[0] is same as('4') %}
+                {% set className = 'quatrieme' %}
+
+            {% endif %}
+        {% endif %}
+        {# Ouvreture d'un block <a> avec un attribut class qui si la variable className est defini alors appel de la variable className #}
+        <div class="collab">
+            <a class="collabs {% if className is defined %} {{className}} {% endif %}" href="model?teamId={{team.id}}">
+
+            <img class="photo-profil" src="{{asset(team.photo)}}">{{team.firstname}} {{team.lastname}} ( {{team.position[0].getLabel()}}
+
+            {# Boucle du tableau team.position #}
+            {% for position in team.position %}
+                {# Si l'index de la loop en partant de 0 est supérieur ou égal a 1 #}
+                {% if loop.index0 >= 1 %}
+                    {# Alors affichage des autres label #}
+                    /{{team.position[loop.index0].getLabel()}}
+                {% endif %}
+            {% endfor %}
+            {# Fermeture des parenthèses et de la balise <a> #}
+            )</a>
+        </div>
+
+        {# équivalent php "var_dump()" #}
+            {# {{dump(loop)}} #}
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page de {{team.firstname}} {{team.lastname}}{% endblock %}
+
+{% block body %}
+{# {{form(view, {'method': 'POST'})}} #}
+<a class="btn retour" href="/model?teamId={{team.id}}">Retour</a>
+<div class="example-wrapper">
+    {{form_start(view, {'method': 'POST'})}}
+        <img src="{{field_value(view.picture)}}">
+        {# {{form_row(view.firstname, {'label': 'firstname'})}} #}
+    {{form_end(view)}}
+</div>
+{% endblock %}

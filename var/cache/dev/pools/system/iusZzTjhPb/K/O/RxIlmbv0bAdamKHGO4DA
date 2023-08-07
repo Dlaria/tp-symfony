@@ -1,0 +1,63 @@
+<?php //App_Entity_Team
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Symfony\\Component\\Serializer\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Serializer\\Mapping\\ClassMetadata')),
+        clone ($p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata')),
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\Team',
+                'id',
+                'firstname',
+                'lastname',
+                'positions',
+                'picture',
+                'year_old',
+                'adresse',
+                'tel',
+                'mail',
+                'CV',
+                'hierarchie',
+                'yearOld',
+                'cV',
+            ],
+            'attributesMetadata' => [
+                [
+                    'id' => $o[1],
+                    'firstname' => $o[2],
+                    'lastname' => $o[3],
+                    'positions' => $o[4],
+                    'picture' => $o[5],
+                    'year_old' => $o[6],
+                    'adresse' => $o[7],
+                    'tel' => $o[8],
+                    'mail' => $o[9],
+                    'CV' => $o[10],
+                    'hierarchie' => $o[11],
+                    'yearOld' => $o[12],
+                    'cV' => $o[13],
+                ],
+            ],
+            'classDiscriminatorMapping' => [
+                null,
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];
